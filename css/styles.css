@@ -10,6 +10,7 @@
     box-sizing: border-box;
   }
 
+
 body {
     margin: 0;
     padding: 0;
@@ -55,10 +56,14 @@ svg {
   padding-top: 2.5rem;
   padding-bottom: 1rem;
  
+
 }
 
-.navbar-brand {
-  margin-left: 16rem;
+
+.container {
+  text-align: center;
+  margin: auto;
+  margin-left: 20rem;
 }
 
 .navbar-title {
