@@ -3,9 +3,7 @@
 :root {
     --background-color: #f7f7f7;
     --font-color: #3f3f44;
-    --secondary-color: #99d8d0;
-    --box-color: #20b2aa;
-    --border-color: #778899;
+   
 }
 
 * {
@@ -23,138 +21,69 @@ body {
 }
 
 h1 {
-    text-align: center;
+  text-align: center;
+    text-transform: capitalize;
+    margin:auto;
+
 }
 
 hr{
+    margin-top: 7rem;
     margin-bottom: 5rem;
     background-color: var(--border-color);
 }
 
-.card {
-    border: solid thin var(--border-color);
-    width: 35rem;
-    margin: auto;
-    text-align: center;
+
+.page-title {
+  margin-top: 3.5rem;
 }
+
+
+
 .pokemon-ul {
-    margin-top: 2rem;
-    margin-left: none;
-  list-style: none;
-  text-align: center;
-  padding-right: 2rem;
-
-
-}
-
-
-
-.pokedex-container {
-    font-size: large;
-    background-color: var(--secondary-color);
-    width: 25rem;
+    
     text-align: center;
-    margin-bottom: 1rem;
-    border-radius: 5%;
-    line-height: 3rem;
-    text-transform: capitalize;
 }
 
-.pokedex-container:hover {
-    cursor: pointer;
-    opacity: .8;
-    transition: opacity .3s;
+
+svg {
+  width: 50px;
+  height: 50px;
 }
 
-/* ********************* MODAL **************************** */
+.navbar {
+  padding-top: 2.5rem;
+  padding-bottom: 1rem;
+ 
+}
 
-#modal-container {
-    display: none;
-    
-  }
+.navbar-brand {
+  margin-left: 16rem;
+}
 
-  #modal-container.is-visible {
-    display: block;
-    position: fixed;
-    padding: 20px;
-    box-sizing: border-box;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    
-    /* to show it above other content */
-    z-index: 999; 
-    
-    /* allows scrolling if the screen is not high enough*/
-    overflow: auto; 
-    
-    /* this is used to center the modal */
-    display: grid;
-    text-align: center;
-  }
-  
-  .modal {
-    margin: auto;
-    display: inline-block;
-    box-sizing: border-box;
-    background: #fff;
-    padding: 15px;
-    width: 100%;
-    max-width: 700px;
-    text-align: left;
-  }
-  
-  .modal-title {
+.navbar-title {
+  font-size: 30px;
+}
+
+.row {
+  margin-top: 8.5rem;
+}
+
+.credit {
+  font-size: small;
+}
+ 
+button {
     text-transform: capitalize;
-    margin-left: 3rem;
-  }
+  } 
+  
+  
 
   .modal-image {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 25%;
+    width: 30%;
   }
   
-  .modal-close {
-    float: right;
-    -webkit-appearance: none;
-    border: 0;
-    background: none;
-    color: #777;
-    text-decoration: underline;
-  }
   
-  .modal h1 {
-    margin-top: 0;
-  }
-  
-  .modal p {
-    margin-bottom: 0;
-  }
-
-  .modal-confirm {
-      background-color: green;
-  }
-
-  .modal-cancel {
-      background-color: red;
-  }
-
-
-/* ********************* MEDIA **************************** */
-
-@media all and (max-width: 500px) {
-    .pokedex-container {
-       width: 20rem;
-        }
-  }
-  
-  @media all and (min-width: 500px) and (max-width: 750px) {
-    .pokedex-container {
-        width: 17rem;
-         }
-  
-  }

@@ -1,3 +1,6 @@
+
+
+
 var pokemonRepository = (function () {
   var pokemonList = [];
 
@@ -16,38 +19,32 @@ var pokemonRepository = (function () {
   function showDetails(item) {
     loadDetails(item).then(function () {
 
-      var modalContainer = $('#modal-container').text('');
+      var modalBody = $('.modal-body');
+      var modalTitle = $('.modal-title');
 
-      
-        // Clear all existing modal content
-        
-        //create the second div
-        var modal = $('<div class="modal"></div>');
-      
+       // Clear all existing modal content
+      modalBody.empty();
+      modalTitle.empty();
+
 
         //adding the new modal content
-
-        var modalCloseButton = $('<button class ="modal-close">Close</button>');
-        modalCloseButton.on('click', hideModal);
        
 
-        var modalTitle = $('<h1 class="modal-title"></h1>').text(item.name);
- 
+        var modalName = $('<h1 class="modal-title2"></h1>').text(item.name);
+        modalTitle.append(modalName);
      
-        var modalHeight = $('<p></p>').text('Height ' + item.height + 'm');
+        var modalHeight = $('<p></p>').text('Height: ' + item.height + 'm');
        
 
-        var modalTypes = $('<p></p>').text('Types: ' + item.types);
+        var modalTypes = $('<p></p>').text('Type(s): ' + item.types.join(', '));
       
 
         var modalImage = $('<img class="modal-image">').attr("src", item.imageUrl);
       
+        modalBody.append(modalHeight).append(modalTypes).append(modalImage);
         
 
-        modal.append(modalCloseButton).append(modalTitle).append(modalImage).append(modalHeight).append(modalTypes);
-        modalContainer.append(modal);
-
-        modalContainer.addClass('is-visible');
+ 
 
         // to close the modal using the escape key (checking if the modal is open)
 
@@ -75,8 +72,8 @@ var pokemonRepository = (function () {
 
   function addListItem(pokemon) {
     var $pokemonUl = $('.pokemon-ul');
-    var $listItem = $('<li></li>');
-    var $button = $('<button class = "pokedex-container"></button>').text(pokemon.name)
+    var $listItem = $('<button type="button" class="list-group-item list-group-item-action"></button>');
+    var $button = $('<button type ="button" class ="btn-outline-danger btn-block btn-lg" data-toggle="modal" data-target="#modal-container"></button>').text(pokemon.name)
     $listItem.append($button);
     $pokemonUl.append($listItem);
     $button.on('click', function (event) {
@@ -135,3 +132,4 @@ pokemonRepository.loadList().then(function() {
     pokemonRepository.addListItem(pokemon);
   });
 });
+
